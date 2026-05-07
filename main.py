@@ -190,10 +190,9 @@ def render_sidebar():
                 st.markdown("""
                     <div style="display:flex;align-items:center;gap:8px;margin-top:4px;">
                         <div style="width:8px;height:8px;border-radius:50%;background:#FF9800;"></div>
-                        <span style="color:#FF9800;font-size:0.85rem;">Offline Mode — using built-in questions</span>
+                        <span style="color:#FF9800;font-size:0.85rem;">Offline Mode</span>
                     </div>
                 """, unsafe_allow_html=True)
-                st.caption("Get a free key at [aistudio.google.com](https://aistudio.google.com)")
 
 
             st.markdown("---")
