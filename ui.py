@@ -284,17 +284,114 @@ def inject_custom_css():
     </style>
     """, unsafe_allow_html=True)
 
+    st.markdown(f"""
+    <style>
+      /* ----------------------------
+         Readability / Contrast Fix
+         ---------------------------- */
+
+      :root {{
+        --bg: #0B0E14;
+        --card: #121726;
+        --text: #EAF0FF;        /* high-contrast readable */
+        --muted: #A9B2C7;       /* readable secondary */
+        --border: rgba(255,255,255,0.10);
+        --link: {THEME['primary']};
+      }}
+
+      /* App background */
+      [data-testid="stAppViewContainer"] {{
+        background: var(--bg);
+        color: var(--text);
+      }}
+
+      /* Make ALL normal text readable by default */
+      .stApp, .stApp * {{
+        color: var(--text);
+      }}
+
+      /* Secondary text */
+      .hero-subtitle,
+      .stat-label,
+      .hint-text,
+      .fun-fact,
+      .lb-row span:last-child,
+      .stCaption,
+      small,
+      p {{
+        color: var(--muted) !important;
+      }}
+
+      /* Fix markdown + headers */
+      h1, h2, h3, h4, h5, h6 {{
+        color: var(--text) !important;
+      }}
+      a, a * {{
+        color: var(--link) !important;
+      }}
+
+      /* Fix your custom cards */
+      .trivia-card,
+      .question-card,
+      .stat-box,
+      .mode-card,
+      .lb-row {{
+        background: var(--card) !important;
+        border: 1px solid var(--border) !important;
+      }}
+
+      /* Question text must be bright */
+      .question-text {{
+        color: var(--text) !important;
+      }}
+
+      /* Radio labels readability */
+      div[data-testid="stRadio"] label {{
+        background: rgba(255,255,255,0.04) !important;
+        border: 1px solid rgba(255,255,255,0.10) !important;
+      }}
+      div[data-testid="stRadio"] label:hover {{
+        background: rgba(108,99,255,0.12) !important;
+        border-color: rgba(108,99,255,0.35) !important;
+      }}
+
+      /* Inputs */
+      input, textarea {{
+        color: var(--text) !important;
+        background: rgba(255,255,255,0.06) !important;
+        border: 1px solid rgba(255,255,255,0.12) !important;
+      }}
+
+      /* Buttons: ensure text visible */
+      .stButton > button {{
+        color: var(--text) !important;
+        background: rgba(108,99,255,0.14) !important;
+        border: 1px solid rgba(108,99,255,0.35) !important;
+      }}
+      .stButton > button:hover {{
+        background: rgba(108,99,255,0.22) !important;
+      }}
+
+      /* Remove any accidental “dark text on dark bg” */
+      .mode-card * ,
+      .trivia-card * ,
+      .question-card * {{
+        color: var(--text) !important;
+      }}
+    </style>
+    """, unsafe_allow_html=True)
+
 
 # ─── UI Components ────────────────────────────────────────
 
 def render_hero():
-    """Render the hero/landing section."""
-    st.markdown("""
+    """Render the hero/landing section (Pop Culture edition)."""
+    st.markdown(f"""
         <div style="text-align: center; padding: 40px 0 20px;">
-            <div style="font-size: 4rem; margin-bottom: 10px;">🌍</div>
-            <div class="hero-title">Culture Trivia</div>
+            <div style="font-size: 4rem; margin-bottom: 10px;">🎬</div>
+            <div class="hero-title">Pop Culture Trivia Bot</div>
             <div class="hero-subtitle">
-                Explore world cultures through AI-powered trivia — history, festivals, food, geography & languages
+                TV • Movies • Music — adaptive trivia that levels up as you do
             </div>
         </div>
     """, unsafe_allow_html=True)
