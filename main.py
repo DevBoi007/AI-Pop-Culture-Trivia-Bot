@@ -34,8 +34,8 @@ from ui import (
 # ─── Page Config ──────────────────────────────────────────
 
 st.set_page_config(
-    page_title="Culture Trivia — AI Chatbot",
-    page_icon="🌍",
+    page_title="Pop Culture Trivia Bot",
+    page_icon="🎬",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -95,8 +95,8 @@ def render_sidebar():
     with st.sidebar:
         st.markdown("""
             <div style="text-align: center; margin-bottom: 20px;">
-                <span style="font-size: 2rem;">🌍</span>
-                <span style="font-size: 1.3rem; font-weight: 700; margin-left: 8px;">Culture Trivia</span>
+                <span style="font-size: 2rem;">🎬</span>
+                <span style="font-size: 1.3rem; font-weight: 700; margin-left: 8px;">Pop Culture Trivia</span>
             </div>
         """, unsafe_allow_html=True)
 
@@ -157,9 +157,9 @@ def render_sidebar():
             # ── AI Configuration ──
             st.markdown("#### 🤖 AI Settings")
             api_key = st.text_input(
-                "Gemini API Key", type="password",
+                "Sarvam API Key", type="password",
                 value=st.session_state.api_key,
-                placeholder="Paste your AIza... key here",
+                placeholder="Paste your API subscription key here",
                 key="api_key_input",
             )
 
@@ -799,7 +799,7 @@ def main():
                 <div style="font-size: 2rem; margin-bottom: 10px;">👈</div>
                 <div style="font-size: 1.1rem; font-weight: 600;">Enter your name in the sidebar to get started!</div>
                 <div style="color: {THEME['text_secondary']}; margin-top: 8px;">
-                    Challenge yourself with AI-powered trivia from cultures around the world.
+                    Challenge yourself with AI-powered trivia from TV, movies, and music.
                 </div>
             </div>
         """, unsafe_allow_html=True)
