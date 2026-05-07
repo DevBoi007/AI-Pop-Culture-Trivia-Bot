@@ -3,7 +3,7 @@ Configuration constants for the AI Culture Trivia Chatbot.
 """
 
 # ─── Topics ───────────────────────────────────────────────
-TOPICS = ["History", "Festivals", "Food", "Geography", "Languages"]
+TOPICS = ["TV", "Movies", "Music"]
 
 # ─── Difficulty ───────────────────────────────────────────
 MIN_DIFFICULTY = 1
@@ -50,13 +50,12 @@ MAX_HINTS_PER_QUESTION = 2
 # ─── Daily Challenge ─────────────────────────────────────
 DAILY_CHALLENGE_QUESTIONS = 5
 
-# ─── Gemini AI ────────────────────────────────────────────
-GEMINI_MODEL = "gemini-2.0-flash"
-GENERATION_CONFIG = {
-    "temperature": 0.8,
-    "top_p": 0.95,
-    "max_output_tokens": 1024,
-}
+# ─── Sarvam AI ────────────────────────────────────────────
+SARVAM_MODEL = "sarvam-105b"
+SARVAM_TEMPERATURE = 0.8
+SARVAM_TOP_P = 1.0
+SARVAM_MAX_TOKENS = 900
+SARVAM_WIKI_GROUNDING = True
 
 # ─── Database ─────────────────────────────────────────────
 DATABASE_PATH = "trivia.db"
